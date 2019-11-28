@@ -29,11 +29,11 @@ int main(int argc, char **argv)
 
 void display_usage(void)
 {
-    write(1, "animation rendering in csfml window\n", 37);
-    write(1, "\n", 2);
-    write(1, "USAGE\n", 7);
-    write(1, "\t./my_screensaver\t[OPTIONS] animation_id\n", 42);
-    write(1, "\tanimation_id\tID of the animation to process (only 1)\n", 63);
-    write(1, "\nOPTIONS\n", 10);
-    write(1, "\t-h\t\tprint the usage and quit\n", 31);
+    write(1, "animation rendering in csfml window\n", 36);
+    write(1, "\n", 1);
+    write(1, "USAGE\n", 6);
+    write(1, "\t./my_screensaver\t[OPTIONS] animation_id\n", 41);
+    write(1, "\tanimation_id\tID of the animation to process (only 1)\n", 54);
+    write(1, "\nOPTIONS\n", 9);
+    write(1, "\t-h\t\tprint the usage and quit\n", 30);
 }
