@@ -12,6 +12,9 @@ SRC		=		main.c 					\
 				animation_1.c			\
 				my_getnbr.c				\
 				my_strcmp.c				\
+				second_anim.c			\
+				add_second.c 			\
+				third_anim.c 			\
 
 
 

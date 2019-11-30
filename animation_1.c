@@ -7,7 +7,6 @@
 
 #include "my.h"
 
-
 static t_circle circle[9] = {
     {{20, 20}, 20, 0, 0},
     {{20, 300}, 20, 0, 0},
@@ -31,7 +30,8 @@ void drawing(t_framebuffer *fb, sfColor color)
     }
 }
 
-void draw_depl(t_framebuffer *fb, t_circle *test) {
+void draw_depl(t_framebuffer *fb, t_circle *test)
+{
     if (test->center.x > 0 + test->radius
         && test->center.y == 0 + test->radius) {
         test->move_x = -0.5;
@@ -54,5 +54,24 @@ void draw_depl(t_framebuffer *fb, t_circle *test) {
     }
     test->center.x += test->move_x;
     test->center.y += test->move_y;
+}
+
+sfColor giving_color(sfColor color)
+{
+    sfEvent event;
+
+    if (event.type == sfEvtKeyPressed) {
+        if (event.key.code == sfKeyR)
+            return (sfRed);
+        if (event.key.code == sfKeyB)
+            return (sfBlue);
+        if (event.key.code == sfKeyG)
+            return (sfGreen);
+        if (event.key.code == sfKeyR)
+            return (sfRed);
+        if (event.key.code == sfKeyJ)
+            return (sfYellow);
+    }
+    return (color);
 }
 

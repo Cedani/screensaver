@@ -14,7 +14,7 @@ sfRenderWindow *create_window(sfRenderWindow *window, int width, int height)
     mode.width = width;
     mode.height = height;
     mode.bitsPerPixel = 32;
-    window = sfRenderWindow_create(mode, "myWindow", sfDefaultStyle, NULL);
+    window = sfRenderWindow_create(mode, "Screensaver", sfDefaultStyle, NULL);
     if (window == NULL) {
         write(2, "window not initialized", 23);
         exit (84);
@@ -39,7 +39,7 @@ t_framebuffer *create_buffer(int width, int height)
 
 void frame_clear(t_framebuffer *fb, sfColor color)
 {
-    color.a = 0;
+    color.a = 2;
     color.r = 100;
     color.b = 100;
     color.g = 100;
