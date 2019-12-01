@@ -89,4 +89,5 @@ void draw_fourth(t_framebuffer *fb, sfRenderWindow *window);
 void changing_color(t_square *s);
 void drawing_rectangle(t_framebuffer *fb, t_rectangle *r);
 void draw_fifth(t_framebuffer *fb);
+void display_description(void);
 #endif /* !DRAWING */
