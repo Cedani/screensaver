@@ -19,7 +19,7 @@ int main(int argc, char **argv)
         display_usage();
         exit(0);
     }
-    if (i != 1) {
+    if (i < 1 || i > 5) {
         write(2, "wrong animation_id\n", 20);
         exit (84);
     }
@@ -33,7 +33,9 @@ void display_usage(void)
     write(1, "\n", 1);
     write(1, "USAGE\n", 6);
     write(1, "\t./my_screensaver\t[OPTIONS] animation_id\n", 41);
-    write(1, "\tanimation_id\tID of the animation to process (only 1)\n", 54);
+    write(1, "\tanimation_id\tID of the animation to process", 45);
+    write(1, " between (1 and 5)\n", 19);
     write(1, "\nOPTIONS\n", 9);
     write(1, "\t-h\t\tprint the usage and quit\n", 30);
+    write(1, "\t-d\t\t", 1);
 }

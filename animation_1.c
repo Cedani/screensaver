@@ -30,48 +30,25 @@ void drawing(t_framebuffer *fb, sfColor color)
     }
 }
 
-void draw_depl(t_framebuffer *fb, t_circle *test)
+void draw_depl(t_framebuffer *fb, t_circle *t)
 {
-    if (test->center.x > 0 + test->radius
-        && test->center.y == 0 + test->radius) {
-        test->move_x = -0.5;
-        test->move_y = 0;
+    if (t->center.x > 0 + t->radius && t->center.y == 0 + t->radius) {
+        t->move_x = -0.5;
+        t->move_y = 0;
     }
-    if (test->center.x == 0 + test->radius
-        && test->center.y < TEST_HEIGHT - test->radius) {
-        test->move_x = 0;
-        test->move_y = 0.5;
+    if (t->center.x == 0 + t->radius && t->center.y < TEST_HEIGHT - t->radius) {
+        t->move_x = 0;
+        t->move_y = 0.5;
     }
-    if (test->center.x < TEST_WIDTH - test->radius
-        && test->center.y == TEST_HEIGHT - test->radius) {
-        test->move_x = 0.5;
-        test->move_y = 0;
+    if (t->center.x < TEST_WIDTH - t->radius
+        && t->center.y == TEST_HEIGHT - t->radius) {
+        t->move_x = 0.5;
+        t->move_y = 0;
     }
-    if (test->center.x == TEST_WIDTH - test->radius
-        && test->center.y > 0 + test->radius) {
-        test->move_x = 0;
-        test->move_y = -0.5;
+    if (t->center.x == TEST_WIDTH - t->radius && t->center.y > 0 + t->radius) {
+        t->move_x = 0;
+        t->move_y = -0.5;
     }
-    test->center.x += test->move_x;
-    test->center.y += test->move_y;
+    t->center.x += t->move_x;
+    t->center.y += t->move_y;
 }
-
-sfColor giving_color(sfColor color)
-{
-    sfEvent event;
-
-    if (event.type == sfEvtKeyPressed) {
-        if (event.key.code == sfKeyR)
-            return (sfRed);
-        if (event.key.code == sfKeyB)
-            return (sfBlue);
-        if (event.key.code == sfKeyG)
-            return (sfGreen);
-        if (event.key.code == sfKeyR)
-            return (sfRed);
-        if (event.key.code == sfKeyJ)
-            return (sfYellow);
-    }
-    return (color);
-}
-

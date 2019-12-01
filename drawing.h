@@ -7,7 +7,19 @@
 
 #ifndef DRAWING
 #define DRAWING
-#include "my.h"
+#include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/Texture.h>
+#include <SFML/Graphics.h>
+#include <SFML/Graphics/Sprite.h>
+#include <SFML/Window/Export.h>
+#include <SFML/Window/Joystick.h>
+#include <SFML/Window/Keyboard.h>
+#include <SFML/Window/Mouse.h>
+#include <SFML/Window/Sensor.h>
+#include <math.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_circle {
     sfVector2f center;
@@ -57,7 +69,7 @@ void drawing(t_framebuffer *fb, sfColor color);
 void direction(t_framebuffer *fb);
 void draw_depl(t_framebuffer *fb, t_circle *test);
 void destroying_ressources(t_ressources *ressources);
-void change_animation(t_framebuffer *fb, int index);
+void change_animation(t_framebuffer *fb, int index, sfRenderWindow *w);
 int attrib_sign(char const *str, int i);
 int attrib_num(char const *str, int i);
 int my_getnbr(char const *str);
@@ -66,7 +78,6 @@ void display_usage(void);
 void drawing_orbit(t_square *test);
 void rand_color(sfColor *color);
 void draw_square(t_framebuffer *fb, sfVector2f point, int dim, sfColor color);
-sfColor giving_color(sfColor color);
 void print_square(t_framebuffer *fb);
 void change_square_size(t_square *s);
 void draw_rect(t_framebuffer *fb);
@@ -74,4 +85,8 @@ void drawing_square(t_square *s);
 void refreshing(t_ressources *re);
 void manage_index(int *index);
 void draw_third(t_framebuffer *fb);
+void draw_fourth(t_framebuffer *fb, sfRenderWindow *window);
+void changing_color(t_square *s);
+void drawing_rectangle(t_framebuffer *fb, t_rectangle *r);
+void draw_fifth(t_framebuffer *fb);
 #endif /* !DRAWING */

@@ -15,6 +15,8 @@ SRC		=		main.c 					\
 				second_anim.c			\
 				add_second.c 			\
 				third_anim.c 			\
+				fourth_anim.c 			\
+				fifth_anim.c 			\
 
 
 

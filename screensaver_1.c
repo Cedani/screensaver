@@ -19,27 +19,30 @@ void my_screensaver(int index)
                 sfRenderWindow_close(re->window);
         if (event.type == sfEvtKeyPressed) {
             if (event.key.code == sfKeyLeft)
-                index -= 1;
+                index += -1;
             if (event.key.code == sfKeyRight)
                 index += 1;
         }
         frame_clear(re->fb, sfBlack);
         manage_index(&index);
-        change_animation(re->fb, index);
+        change_animation(re->fb, index, re->window);
         refreshing(re);
     }
     destroying_ressources(re);
 }
 
-void change_animation(t_framebuffer *fb, int index)
+void change_animation(t_framebuffer *fb, int index, sfRenderWindow *w)
 {
-    if (index == 1) {
+    if (index == 1)
         drawing(fb, sfRed);
-    } if (index == 2) {
+    if (index == 2)
         print_square(fb);
-    } if (index == 3) {
+    if (index == 3)
         draw_third(fb);
-    }
+    if (index == 4)
+        draw_fourth(fb, w);
+    if (index == 5)
+        draw_fifth(fb);
 }
 
 void set_ressources(t_ressources *re)
