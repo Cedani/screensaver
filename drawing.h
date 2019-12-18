@@ -8,7 +8,6 @@
 #ifndef DRAWING
 #define DRAWING
 #include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics/Texture.h>
 #include <SFML/Graphics.h>
 #include <SFML/Graphics/Sprite.h>

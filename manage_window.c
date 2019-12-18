@@ -17,7 +17,7 @@ sfRenderWindow *create_window(sfRenderWindow *window, int width, int height)
     window = sfRenderWindow_create(mode, "Screensaver", sfDefaultStyle, NULL);
     if (window == NULL) {
         write(2, "window not initialized", 23);
-        exit (84);
+        return (84);
     }
     return (window);
 }
@@ -32,7 +32,7 @@ t_framebuffer *create_buffer(int width, int height)
     fb->pixel = malloc((width*height*32) / 8);
     if (fb == NULL) {
         write(2, "frame not initialized", 22);
-        exit (84);
+        return (84);
     }
     return (fb);
 }

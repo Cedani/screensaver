@@ -14,13 +14,12 @@ void my_screensaver(int index)
 
     set_ressources(re);
     while (sfRenderWindow_isOpen(re->window)) {
-        while (sfRenderWindow_pollEvent(re->window, &event))
+        while (sfRenderWindow_pollEvent(re->window, &event)) {
             if (event.type == sfEvtClosed)
                 sfRenderWindow_close(re->window);
-        if (event.type == sfEvtKeyPressed) {
-            if (event.key.code == sfKeyLeft)
+            if (sfKeyboard_isKeyPressed(sfKeyLeft))
                 index += -1;
-            if (event.key.code == sfKeyRight)
+            if (sfKeyboard_isKeyPressed(sfKeyRight))
                 index += 1;
         }
         frame_clear(re->fb, sfBlack);

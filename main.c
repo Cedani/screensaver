@@ -12,20 +12,20 @@ int main(int argc, char **argv)
     int i;
     if (argc != 2) {
         write(2, "wrong number of argument\n", 26);
-        exit (84);
+        return (84);
     }
     i = my_getnbr(argv[1]);
     if (my_strcmp(argv[1], "-h") == 0) {
         display_usage();
-        exit(0);
+        return (0);
     }
     if (my_strcmp(argv[1], "-d") == 0) {
         display_description();
-        exit(0);
+        return (0);
     }
     if (i < 1 || i > 5) {
         write(2, "wrong animation_id\n", 20);
-        exit (84);
+        return (84);
     }
     my_screensaver(i);
     return (0);
