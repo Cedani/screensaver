@@ -22,8 +22,12 @@ SRC		=		main.c 					\
 
 NAME	=		my_screensaver
 
+CC	=	gcc
+
+CSFML_FLAGS	=	-lcsfml-window -lcsfml-graphics -lcsfml-audio -lcsfml-system -lm
+
 all:
-		gcc -lm -lcsfml-window -lcsfml-graphics -lcsfml-audio -lcsfml-system $(SRC) -o $(NAME)
+		$(CC) $(SRC) -o $(NAME) $(CSFML_FLAGS)
 
 clean:
 		rm -rf *.o
